@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 
-const posts = require('./routes/posts');
+const sports = require('./routes/sports');
 
 //Connect to DB
 mongoose.connect(process.env.DB, {useNewUrlParser: true}, (err) => {
@@ -25,7 +25,7 @@ app.use(cors({
 
 //Route middleware
 app.use('/api/user', authRoute);
-app.use('/api/posts', posts);
+app.use('/api/sports', sports);
 
 app.listen(5000, () => {
 

@@ -2,6 +2,7 @@ import { React, useState } from 'react'
 import './Register.css';
 import axios from 'axios';
 import validator from 'validator';
+import { useHistory } from 'react-router';
 
 const Register = () => {
     const [username, setUsername] = useState('');
@@ -10,6 +11,8 @@ const Register = () => {
     const [emailValidator, setEmailValidator] = useState('');
     const [credentialValidator, setCredentials] = useState('');
     const [checkUser, setUser] = useState('');
+
+    const history = useHistory();
 
     return (
         <div className="container">
@@ -88,6 +91,8 @@ const Register = () => {
 
                                 setUser('User created!');
                                 console.log('Success');
+
+                                history.push('/login');
                             }
                         })
                         .catch(err => {

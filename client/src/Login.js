@@ -10,7 +10,6 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [checkEmail, setCheckEmail] = useState('');
     const [credentials, setCredentials] = useState('');
-    const [user, setUser] = useState('');
     const { loggedIn, setLoggedIn } = useContext(LoginContext);
     const history = useHistory();
 
